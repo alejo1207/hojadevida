@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alejandro Román — CV</title>
+  <meta name="description" content="Hoja de vida online de Alejandro Román Villegas: técnico en sistemas, soporte TI, redes y automatización con Excel/Python." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }, colors: { brand: { DEFAULT: '#0B3B6C', light:'#134b86', soft:'#e6eef7'}, accent:'#0EA5E9' }}}};
+  </script>
+  <style>
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.9); }
+    .dark .glass { background: rgba(13, 18, 28, .6); }
+    .progress { width: var(--val,0); transition: width 1s ease; }
+    .reveal { opacity: 0; transform: translateY(12px); transition: .6s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+    .banking-card{ border:1px solid rgba(15,23,42,.08); box-shadow: 0 8px 24px rgba(2,6,23,.06); }
+  </style>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"Person","name":"Alejandro Román Villegas","jobTitle":"Técnico en Sistemas | Soporte TI","email":"mailto:alejo1207@gmail.com","telephone":"+57-317-441-3351","address":{"@type":"PostalAddress","addressLocality":"Pereira","addressCountry":"CO"},"url":"https://alejo1207.github.io"}
+  </script>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+  <!-- Fixed Sidebar / Header (banking look) -->
+  <header class="fixed top-0 left-0 h-full w-full md:w-80 p-6 md:p-8 z-40">
+    <div class="glass rounded-2xl banking-card w-full h-auto md:h-full p-6 md:p-8">
+      <!-- Profile -->
+      <div class="flex md:block md:text-center items-center gap-4">
+        <div class="w-20 h-20 md:w-28 md:h-28 rounded-xl bg-brand/10 flex items-center justify-center border border-brand/20">
+          <i data-lucide="user" class="w-10 h-10 text-brand"></i>
+        </div>
+        <div class="flex-1">
+          <h1 class="text-xl md:text-2xl font-extrabold text-brand">Alejandro Román Villegas</h1>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300">Técnico en Sistemas · Soporte TI</p>
+          <p class="text-[11px] md:text-xs text-slate-500">Pereira, Colombia</p>
+        </div>
+      </div>
+      <!-- Contacts -->
+      <div class="mt-6 space-y-2 text-sm">
+        <a href="mailto:alejo1207@gmail.com" class="flex items-center gap-2 hover:text-brand"><i data-lucide="mail" class="w-4 h-4"></i> alejo1207@gmail.com</a>
+        <a href="tel:+573174413351" class="flex items-center gap-2 hover:text-brand"><i data-lucide="phone" class="w-4 h-4"></i> +57 317 441 3351</a>
+        <a href="#" class="flex items-center gap-2 hover:text-brand"><i data-lucide="map-pin" class="w-4 h-4"></i> Pereira, CO</a>
+        <a href="https://github.com/alejo1207" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="github" class="w-4 h-4"></i> github.com/alejo1207</a>
+        <a href="https://linkedin.com/in/alejandroroman" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="linkedin" class="w-4 h-4"></i> linkedin.com/in/alejandroroman</a>
+      </div>
+      <!-- Nav -->
+      <nav class="mt-6 grid grid-cols-3 md:grid-cols-1 gap-2 text-sm">
+        <a href="#about" class="px-3 py-2 rounded-lg hover:bg-brand/10">Sobre mí</a>
+        <a href="#metrics" class="px-3 py-2 rounded-lg hover:bg-brand/10">Logros</a>
+        <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-brand/10">Habilidades</a>
+        <a href="#experience" class="px-3 py-2 rounded-lg hover:bg-brand/10">Experiencia</a>
+        <a href="#education" class="px-3 py-2 rounded-lg hover:bg-brand/10">Educación</a>
+        <a href="#testimonials" class="px-3 py-2 rounded-lg hover:bg-brand/10">Testimonios</a>
+        <a href="#portfolio" class="px-3 py-2 rounded-lg hover:bg-brand/10">Portafolio</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-brand/10">Contacto</a>
+      </nav>
+      <!-- Actions -->
+      <div class="mt-6 flex items-center gap-2">
+        <button id="themeToggle" class="flex-1 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900">Tema</button>
+        <a href="#" id="btnPDF" class="flex-1 text-center px-3 py-2 rounded-lg bg-brand text-white hover:bg-brand-light">Descargar CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="md:ml-80 space-y-20 md:space-y-24 p-6 md:p-12 max-w-5xl mx-auto">
+    <!-- About -->
+    <section id="about" class="pt-28 md:pt-10 reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <span class="text-[11px] uppercase tracking-widest text-brand font-semibold">Disponible</span>
+        <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Soporte TI, Redes LAN, CCTV y Automatización con Excel/Python</h2>
+        <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">Técnico en sistemas con <strong>5 años de experiencia</strong> en mantenimiento preventivo/correctivo de hardware y software, ensamblaje e instalación de equipos, configuración de redes LAN y CCTV. Experiencia en soporte a <strong>Hand Held + SAP</strong>, elaboración de informes y mejora de procesos. Desarrollo de dashboards en Excel (RSI/MACD, Power Query) y proyectos web ligeros.</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full text-xs bg-brand/10 text-brand">Soporte On‑site</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-brand/10 text-brand">Handheld · SAP</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-brand/10 text-brand">CCTV</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-brand/10 text-brand">Power Query</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-brand/10 text-brand">Python (pandas)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics / Counters -->
+    <section id="metrics" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <h3 class="text-2xl font-bold">Logros en números</h3>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-brand"><span class="counter" data-target="5">0</span>+</div>
+            <p class="text-sm text-slate-500">Años de experiencia</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-brand"><span class="counter" data-target="300">0</span>+</div>
+            <p class="text-sm text-slate-500">Tickets resueltos</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-brand"><span class="counter" data-target="10">0</span>+</div>
+            <p class="text-sm text-slate-500">Proyectos implementados</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-brand"><span class="counter" data-target="4">0</span>+</div>
+            <p class="text-sm text-slate-500">Diplomados/Seminarios</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <h3 class="text-2xl font-bold">Habilidades</h3>
+        <div class="mt-6 grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-4">Tecnología</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm"><span>Hardware/Software</span><span>90%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:90%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>Redes LAN</span><span>80%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:80%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>CCTV</span><span>85%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:85%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Datos y Automatización</h4>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-sm"><span>Excel avanzado / Power Query</span><span>85%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:85%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>Python (pandas/matplotlib)</span><span>60%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:60%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between text-sm"><span>Automatización (Make/Telegram)</span><span>70%</span></div>
+                <div class="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"><div class="progress h-2 bg-brand" style="--val:70%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <h3 class="text-2xl font-bold">Experiencia</h3>
+        <ol class="mt-6 relative border-s border-slate-200 dark:border-slate-800">
+          <li class="ms-6 mb-8">
+            <span class="absolute -start-3 mt-1 h-5 w-5 rounded-full bg-brand"></span>
+            <h4 class="font-semibold">Supervisor de Tecnología — Postobón S.A.</h4>
+            <p class="text-sm text-slate-500">Ago 2022 — Actualidad</p>
+            <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+              <li>Control de inventarios e insumos del sistema de terminales portátiles para canales de Autoventa y Preventa.</li>
+              <li>Mantenimiento preventivo y correctivo (software y hardware) de Hand Held; soporte a la operatividad con SAP.</li>
+              <li>Asesoría y supervisión a usuarios; elaboración de informes, seguimiento de liquidaciones y mejora continua.</li>
+              <li>Cumplimiento de lineamientos de Sistemas de Gestión (Calidad, Inocuidad, SST, Ambiental, SAGRLAFT, etc.).</li>
+            </ul>
+          </li>
+          <li class="ms-6 mb-8">
+            <span class="absolute -start-3 mt-1 h-5 w-5 rounded-full bg-brand"></span>
+            <h4 class="font-semibold">Técnico Soporte On‑Site N1 — Reserco International Services IT S.A.S.</h4>
+            <p class="text-sm text-slate-500">Jul 2019 — Feb 2022</p>
+            <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+              <li>Atención y solución de casos dentro de SLA; documentación en herramienta de seguimiento y comunicación efectiva.</li>
+              <li>Escalamiento a segundo nivel y reporte de incidentes críticos al coordinador de campo.</li>
+            </ul>
+          </li>
+          <li class="ms-6 mb-8">
+            <span class="absolute -start-3 mt-1 h-5 w-5 rounded-full bg-brand"></span>
+            <h4 class="font-semibold">Auxiliar de Infraestructura — Grupo EMI S.A.S.</h4>
+            <p class="text-sm text-slate-500">Feb 2018 — Jun 2019</p>
+            <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+              <li>Soporte a empleados, mantenimiento de computadores, configuración de red, backups, instalación de software e impresoras.</li>
+            </ul>
+          </li>
+          <li class="ms-6 mb-8">
+            <span class="absolute -start-3 mt-1 h-5 w-5 rounded-full bg-brand"></span>
+            <h4 class="font-semibold">Representante Servicio Técnico — TES LTDA</h4>
+            <p class="text-sm text-slate-500">May 2017 — Feb 2018</p>
+            <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+              <li>Capacitación, instalación, reparación y mantenimiento de impresoras láser y dispositivos.</li>
+            </ul>
+          </li>
+          <li class="ms-6">
+            <span class="absolute -start-3 mt-1 h-5 w-5 rounded-full bg-brand"></span>
+            <h4 class="font-semibold">Auxiliar de Sistemas — Universidad Libre Pereira</h4>
+            <p class="text-sm text-slate-500">Mar 2016 — Feb 2017</p>
+            <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+              <li>Soporte técnico en hardware/software, mantenimiento preventivo, configuración de Windows y macOS.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <h3 class="text-2xl font-bold">Educación</h3>
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+            <h4 class="font-semibold">Lic. Comunicación e Informática Educativa</h4>
+            <p class="text-sm text-slate-500">Universidad Tecnológica de Pereira</p>
+          </div>
+          <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+            <h4 class="font-semibold">Técnico en Sistemas</h4>
+            <p class="text-sm text-slate-500">Comfamiliar Risaralda</p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <h4 class="font-semibold">Diplomados y Seminarios</h4>
+          <ul class="list-disc ms-5 mt-2 text-sm leading-relaxed">
+            <li>IX Congreso Colombiano de Computación (2014)</li>
+            <li>Congreso Internacional de Seguridad Informática, 24h (2013)</li>
+            <li>Mantenimiento de Computadores I y II, 90h c/u (2007)</li>
+            <li>Diplomado Maestro Virtual, 120h (2015)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <div class="flex items-center justify-between gap-4">
+          <h3 class="text-2xl font-bold">Testimonios</h3>
+          <p class="text-xs text-slate-500">Referencias verificables bajo solicitud</p>
+        </div>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <figure class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-brand/5">
+            <blockquote class="text-sm leading-relaxed">“Profesional confiable, resolutivo y orientado al servicio. Destaca en comunicación con usuarios y cumplimiento de objetivos.”</blockquote>
+            <figcaption class="mt-3 text-xs text-slate-500">Victoria Eugenia Giraldo — Grupo EMI</figcaption>
+          </figure>
+          <figure class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-brand/5">
+            <blockquote class="text-sm leading-relaxed">“Excelente gestión técnica y de soporte. Mantiene el orden de inventarios y aporta mejoras a los procesos.”</blockquote>
+            <figcaption class="mt-3 text-xs text-slate-500">Luis Eduardo Sánchez — Grupo EMI</figcaption>
+          </figure>
+          <figure class="p-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-brand/5">
+            <blockquote class="text-sm leading-relaxed">“Compromiso, buena actitud y habilidades para mantenimiento y reparación de equipos.”</blockquote>
+            <figcaption class="mt-3 text-xs text-slate-500">Luis Alberto Sepúlveda — TES LTDA</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="reveal">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <div class="flex items-center justify-between gap-4">
+          <h3 class="text-2xl font-bold">Portafolio</h3>
+          <div class="flex items-center gap-2 text-sm">
+            <button class="filter px-3 py-1 rounded-lg border" data-tag="all">Todo</button>
+            <button class="filter px-3 py-1 rounded-lg border" data-tag="excel">Excel</button>
+            <button class="filter px-3 py-1 rounded-lg border" data-tag="web">Web</button>
+            <button class="filter px-3 py-1 rounded-lg border" data-tag="soporte">Soporte</button>
+          </div>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="grid">
+          <article class="card group rounded-xl border overflow-hidden" data-tags="excel">
+            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1551281044-8c99b7841f5e?q=80&w=600&auto=format&fit=crop" alt="Dashboard Excel"/>
+            <div class="p-4">
+              <h4 class="font-semibold group-hover:text-brand">Dashboard Inversiones en Excel</h4>
+              <p class="text-sm text-slate-500">RSI, MACD, Power Query, alertas y resumen semanal.</p>
+            </div>
+          </article>
+          <article class="card group rounded-xl border overflow-hidden" data-tags="web">
+            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Invitación web"/>
+            <div class="p-4">
+              <h4 class="font-semibold group-hover:text-brand">Invitación Web</h4>
+              <p class="text-sm text-slate-500">Formulario, calendario y muro de dedicatorias.</p>
+            </div>
+          </article>
+          <article class="card group rounded-xl border overflow-hidden" data-tags="soporte">
+            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Soporte"/>
+            <div class="p-4">
+              <h4 class="font-semibold group-hover:text-brand">Proyecto Soporte HH + SAP</h4>
+              <p class="text-sm text-slate-500">Capacitación, inventarios y estabilización de flujos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="reveal mb-20">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+        <h3 class="text-2xl font-bold">Contacto</h3>
+        <form id="contactForm" class="mt-6 grid gap-4 md:grid-cols-2">
+          <input required name="name" placeholder="Nombre" class="px-4 py-3 rounded-lg border bg-transparent" />
+          <input required type="email" name="email" placeholder="Correo" class="px-4 py-3 rounded-lg border bg-transparent" />
+          <input name="subject" placeholder="Asunto" class="px-4 py-3 rounded-lg border bg-transparent md:col-span-2" />
+          <textarea required name="message" rows="5" placeholder="Mensaje" class="px-4 py-3 rounded-lg border bg-transparent md:col-span-2"></textarea>
+          <button class="px-4 py-3 rounded-lg bg-brand text-white hover:bg-brand-light md:col-span-2">Enviar</button>
+          <p id="msg" class="text-sm text-emerald-600 hidden md:col-span-2">¡Mensaje enviado! (simulado)</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Icons
+    lucide.createIcons();
+
+    // Theme toggle
+    const tbtn = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+    tbtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Intersection Observer for reveals
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{threshold:.2});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Contact form (mock)
+    document.getElementById('contactForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const p=document.getElementById('msg'); p.classList.remove('hidden'); setTimeout(()=>p.classList.add('hidden'),3000);
+      e.target.reset();
+    });
+
+    // Portfolio filter
+    const filters = document.querySelectorAll('.filter');
+    const cards = document.querySelectorAll('#grid .card');
+    filters.forEach(btn=>btn.addEventListener('click',()=>{
+      const tag = btn.dataset.tag;
+      filters.forEach(b=>b.classList.remove('bg-brand','text-white'));
+      btn.classList.add('bg-brand','text-white');
+      cards.forEach(c=>{
+        const ok = tag==='all' || c.dataset.tags.includes(tag);
+        c.style.display = ok ? '' : 'none';
+      });
+    }));
+
+    // Animate progress widths after load
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.progress').forEach(p=>{ const v = getComputedStyle(p).getPropertyValue('--val'); p.style.width = v; });
+    });
+
+    // Counters
+    const counters = document.querySelectorAll('.counter');
+    const coi = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const el = e.target; const target = +el.dataset.target; let n=0; const step = Math.ceil(target/60);
+          const tick = ()=>{ n = Math.min(target, n+step); el.textContent = n; if(n<target) requestAnimationFrame(tick); };
+          tick(); coi.unobserve(el);
+        }
+      });
+    },{threshold:.6});
+    counters.forEach(c=>coi.observe(c));
+
+    // Download CV placeholder
+    document.getElementById('btnPDF').addEventListener('click', (e)=>{
+      e.preventDefault();
+      alert('Coloca aquí el enlace directo a tu PDF (por ejemplo, en GitHub: /assets/AlejandroRomanCV.pdf).');
+    });
+  </script>
+</body>
+</html>
