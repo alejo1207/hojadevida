@@ -10,7 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }, colors: { brand: { DEFAULT: '#0B3B6C', light:'#134b86', soft:'#e6eef7'}, accent:'#0EA5E9' }}}};
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: { brand: { DEFAULT: '#0B3B6C', light:'#134b86', soft:'#e6eef7'}, accent:'#0EA5E9' }
+        }
+      }
+    };
   </script>
   <style>
     .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.9); }
@@ -27,60 +34,58 @@
   </script>
 </head>
 <body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
-  <!-- Fixed Sidebar / Header (banking look) -->
-  <header class="fixed top-0 left-0 h-full w-full md:w-80 p-6 md:p-8 z-40">
-  <!-- Recuadro de vidrio más alto -->
-  <div class="glass rounded-2xl banking-card w-full min-h-screen p-6 md:p-8 flex flex-col">
-    
-    <!-- Perfil -->
-    <div class="flex md:block md:text-center items-center gap-4">
-      <div class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-xl overflow-hidden border border-brand/20">
-        <img src="fotosinfondo.png" alt="Alejandro Román Villegas" class="w-full h-full object-cover object-top" />
+
+  <!-- Sidebar / Header (responsive) -->
+  <header class="w-full md:w-80 md:fixed md:top-0 md:left-0 md:h-full p-4 md:p-8 z-40">
+    <div class="glass rounded-2xl banking-card w-full h-auto md:min-h-screen p-4 md:p-8">
+
+      <!-- Profile -->
+      <div class="flex md:block md:text-center items-center gap-4">
+        <div class="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-xl overflow-hidden border border-brand/20">
+          <!-- coloca tu imagen en la misma carpeta o en /assets -->
+          <img src="fotosinfondo.png" alt="Alejandro Román Villegas" class="w-full h-full object-cover object-top" />
+        </div>
+        <div class="flex-1 md:mt-4">
+          <h1 class="text-xl md:text-2xl font-extrabold text-brand leading-tight">Alejandro Román Villegas</h1>
+          <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300">Técnico en Sistemas · Soporte TI</p>
+          <p class="text-[11px] md:text-xs text-slate-500">Pereira, Colombia</p>
+        </div>
       </div>
-      <div class="flex-1 md:mt-4">
-        <h1 class="text-xl md:text-2xl font-extrabold text-brand">Alejandro Román Villegas</h1>
-        <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300">Técnico en Sistemas · Soporte TI</p>
-        <p class="text-[11px] md:text-xs text-slate-500">Pereira, Colombia</p>
+
+      <!-- Contacts -->
+      <div class="mt-6 space-y-2 text-sm">
+        <a href="mailto:alejo1207@gmail.com" class="flex items-center gap-2 hover:text-brand"><i data-lucide="mail" class="w-4 h-4"></i> alejo1207@gmail.com</a>
+        <a href="tel:+573174413351" class="flex items-center gap-2 hover:text-brand"><i data-lucide="phone" class="w-4 h-4"></i> +57 317 441 3351</a>
+        <a href="#" class="flex items-center gap-2 hover:text-brand"><i data-lucide="map-pin" class="w-4 h-4"></i> Pereira, CO</a>
+        <a href="https://github.com/alejo1207" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="github" class="w-4 h-4"></i> github.com/alejo1207</a>
+        <a href="https://linkedin.com/in/alejandroroman" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="linkedin" class="w-4 h-4"></i> linkedin.com/in/alejandroroman</a>
+      </div>
+
+      <!-- Nav (scrollable on mobile) -->
+      <nav class="mt-6 grid grid-flow-col auto-cols-max gap-2 overflow-x-auto md:grid-cols-1 md:grid-flow-row md:overflow-visible text-sm">
+        <a href="#about" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Sobre mí</a>
+        <a href="#metrics" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Logros</a>
+        <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Habilidades</a>
+        <a href="#experience" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Experiencia</a>
+        <a href="#education" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Educación</a>
+        <a href="#testimonials" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Testimonios</a>
+        <a href="#portfolio" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Portafolio</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-brand/10 whitespace-nowrap">Contacto</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="mt-6 flex items-center gap-2">
+        <button id="themeToggle" class="flex-1 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900">Tema</button>
+        <a href="#" id="btnPDF" class="flex-1 text-center px-3 py-2 rounded-lg bg-brand text-white hover:bg-brand-light">Descargar CV</a>
       </div>
     </div>
-
-    <!-- Contactos -->
-    <div class="mt-6 space-y-2 text-sm">
-      <a href="mailto:alejo1207@gmail.com" class="flex items-center gap-2 hover:text-brand"><i data-lucide="mail" class="w-4 h-4"></i> alejo1207@gmail.com</a>
-      <a href="tel:+573174413351" class="flex items-center gap-2 hover:text-brand"><i data-lucide="phone" class="w-4 h-4"></i> +57 317 441 3351</a>
-      <a href="#" class="flex items-center gap-2 hover:text-brand"><i data-lucide="map-pin" class="w-4 h-4"></i> Pereira, CO</a>
-      <a href="https://github.com/alejo1207" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="github" class="w-4 h-4"></i> github.com/alejo1207</a>
-      <a href="https://linkedin.com/in/alejandroroman" target="_blank" class="flex items-center gap-2 hover:text-brand"><i data-lucide="linkedin" class="w-4 h-4"></i> linkedin.com/in/alejandroroman</a>
-    </div>
-
-    <!-- Nav -->
-    <nav class="mt-6 grid grid-cols-3 md:grid-cols-1 gap-2 text-sm">
-      <a href="#about" class="px-3 py-2 rounded-lg hover:bg-brand/10">Sobre mí</a>
-      <a href="#metrics" class="px-3 py-2 rounded-lg hover:bg-brand/10">Logros</a>
-      <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-brand/10">Habilidades</a>
-      <a href="#experience" class="px-3 py-2 rounded-lg hover:bg-brand/10">Experiencia</a>
-      <a href="#education" class="px-3 py-2 rounded-lg hover:bg-brand/10">Educación</a>
-      <a href="#testimonials" class="px-3 py-2 rounded-lg hover:bg-brand/10">Testimonios</a>
-      <a href="#portfolio" class="px-3 py-2 rounded-lg hover:bg-brand/10">Portafolio</a>
-      <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-brand/10">Contacto</a>
-    </nav>
-
-    <!-- Acciones -->
-    <div class="mt-6 flex items-center gap-2">
-      <button id="themeToggle" class="flex-1 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900">Tema</button>
-      <a href="#" id="btnPDF" class="flex-1 text-center px-3 py-2 rounded-lg bg-brand text-white hover:bg-brand-light">Descargar CV</a>
-    </div>
-
-    <!-- (Opcional) Empuja contenido al fondo y deja un margen inferior agradable -->
-    <div class="mt-auto pt-4"></div>
-  </div>
-</header>
+  </header>
 
   <!-- Main content -->
-  <main class="md:ml-80 space-y-20 md:space-y-24 p-6 md:p-12 max-w-5xl mx-auto">
+  <main class="md:ml-80 p-4 md:p-12 max-w-5xl mx-auto space-y-16 md:space-y-24">
     <!-- About -->
-    <section id="about" class="pt-28 md:pt-10 reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="about" class="pt-6 md:pt-10 reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <span class="text-[11px] uppercase tracking-widest text-brand font-semibold">Disponible</span>
         <h2 class="mt-2 text-3xl md:text-4xl font-extrabold">Soporte TI, Redes LAN, CCTV y Automatización</h2>
         <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">Técnico en sistemas con <strong>9 años de experiencia</strong> en mantenimiento preventivo/correctivo de hardware y software, ensamblaje e instalación de equipos, configuración de redes LAN y CCTV. Experiencia en soporte a <strong>Hand Held + SAP</strong>, elaboración de informes y mejora de procesos. Desarrollo de dashboards en Excel (RSI/MACD, Power Query) y proyectos web ligeros.</p>
@@ -95,8 +100,8 @@
     </section>
 
     <!-- Metrics / Counters -->
-    <section id="metrics" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="metrics" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <h3 class="text-2xl font-bold">Logros en números</h3>
         <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div class="text-center">
@@ -120,8 +125,8 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="skills" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <h3 class="text-2xl font-bold">Habilidades</h3>
         <div class="mt-6 grid md:grid-cols-2 gap-8">
           <div>
@@ -163,8 +168,8 @@
     </section>
 
     <!-- Experience -->
-    <section id="experience" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="experience" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <h3 class="text-2xl font-bold">Experiencia</h3>
         <ol class="mt-6 relative border-s border-slate-200 dark:border-slate-800">
           <li class="ms-6 mb-8">
@@ -216,8 +221,8 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="education" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <h3 class="text-2xl font-bold">Educación</h3>
         <div class="mt-6 grid md:grid-cols-2 gap-6">
           <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
@@ -242,8 +247,8 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="testimonials" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <div class="flex items-center justify-between gap-4">
           <h3 class="text-2xl font-bold">Testimonios</h3>
           <p class="text-xs text-slate-500">Referencias verificables bajo solicitud</p>
@@ -266,8 +271,8 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="reveal">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="portfolio" class="reveal scroll-mt-24">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <div class="flex items-center justify-between gap-4">
           <h3 class="text-2xl font-bold">Portafolio</h3>
           <div class="flex items-center gap-2 text-sm">
@@ -279,21 +284,21 @@
         </div>
         <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="grid">
           <article class="card group rounded-xl border overflow-hidden" data-tags="excel">
-            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1551281044-8c99b7841f5e?q=80&w=600&auto=format&fit=crop" alt="Dashboard Excel"/>
+            <img loading="lazy" class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1551281044-8c99b7841f5e?q=80&w=600&auto=format&fit=crop" alt="Dashboard Excel"/>
             <div class="p-4">
               <h4 class="font-semibold group-hover:text-brand">Dashboard Inversiones en Excel</h4>
               <p class="text-sm text-slate-500">RSI, MACD, Power Query, alertas y resumen semanal.</p>
             </div>
           </article>
           <article class="card group rounded-xl border overflow-hidden" data-tags="web">
-            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Invitación web"/>
+            <img loading="lazy" class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop" alt="Invitación web"/>
             <div class="p-4">
               <h4 class="font-semibold group-hover:text-brand">Invitación Web</h4>
               <p class="text-sm text-slate-500">Formulario, calendario y muro de dedicatorias.</p>
             </div>
           </article>
           <article class="card group rounded-xl border overflow-hidden" data-tags="soporte">
-            <img class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Soporte"/>
+            <img loading="lazy" class="h-36 w-full object-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt="Soporte"/>
             <div class="p-4">
               <h4 class="font-semibold group-hover:text-brand">Proyecto Soporte HH + SAP</h4>
               <p class="text-sm text-slate-500">Capacitación, inventarios y estabilización de flujos.</p>
@@ -304,8 +309,8 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="reveal mb-20">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-8 md:p-12 banking-card">
+    <section id="contact" class="reveal scroll-mt-24 mb-20">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-white/5 rounded-2xl p-6 md:p-12 banking-card">
         <h3 class="text-2xl font-bold">Contacto</h3>
         <form id="contactForm" class="mt-6 grid gap-4 md:grid-cols-2">
           <input required name="name" placeholder="Nombre" class="px-4 py-3 rounded-lg border bg-transparent" />
