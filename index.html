@@ -404,9 +404,10 @@
     counters.forEach(c=>coi.observe(c));
 
     // Download CV placeholder
-    document.getElementById('btnPDF').addEventListener('click', (e)=>{
-      e.preventDefault();
-      alert('Coloca aquí el enlace directo a tu PDF (por ejemplo, en GitHub: /assets/AlejandroRomanCV.pdf).');
+    document.getElementById('btnPDF').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Redirige al archivo PDF en tu repo
+    window.location.href = "AlejandroRomanCV.pdf";
     });
   </script>
 </body>
