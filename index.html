@@ -76,7 +76,7 @@
       <!-- Actions -->
       <div class="mt-6 flex items-center gap-2">
          <button id="themeToggle" class="flex-1 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900">Tema</button>
-         <a href="#" id="btnPDF" class="flex-1 text-center px-3 py-2 rounded-lg bg-brand text-white hover:bg-brand-light">Descargar CV</a>
+         <a href="AlejandroRomanCV.pdf" id="btnPDF" class="flex-1 text-center px-3 py-2 rounded-lg bg-brand text-white hover:bg-brand-light">Descargar CV</a>
       </div>
     </div>
   </header>
@@ -404,9 +404,10 @@
     counters.forEach(c=>coi.observe(c));
 
     // Download CV placeholder
-    document.getElementById('btnPDF').addEventListener('click', (e)=>{
-      e.preventDefault();
-      alert('Coloca aquí el enlace directo a tu PDF (por ejemplo, en GitHub: /assets/AlejandroRomanCV.pdf).');
+    document.getElementById('btnPDF').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Redirige al archivo PDF en tu repo
+    window.location.href = "AlejandroRomanCV.pdf";
     });
   </script>
 </body>
